@@ -1,7 +1,7 @@
 import express from "express";
 import cors from "cors";
 import morgan from "morgan";
-
+import authRoutes from "./routes/auth.routes.js"
 const app = express();
 
 // Middlewares
@@ -17,5 +17,7 @@ app.get("/", (req, res) => {
         message: "PERN Backend is running 🚀"
     });
 });
+
+app.use("/auth", authRoutes);
 
 export default app;
